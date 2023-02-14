@@ -5,32 +5,11 @@ var Account = Network.Account.new()
 @onready
 var Request = $HTTPRequest
 
-func _ready():
-	Data.load_data(Data.account_path)
-	if Data.current_data.is_empty():
-		print("restore..")
-		Data.reset_data()
-	
-	Data.load_data(Data.account_path)
-	$Foreground/Remember.button_pressed = Data.current_data["remember"]
-	
-	$Foreground/AutoLogin.button_pressed = Data.current_data["AutoLogin"]
-	
-	if $Foreground/Remember.button_pressed:
-		$Foreground/EmailText.text = Data.current_data["email"]
-		$Foreground/PasswordText.text = Data.current_data["password"]
-		if $Foreground/AutoLogin.button_pressed:
-			_on_login_button_pressed()
-	else:
-		Data.current_data["remember"] = false
-		Data.current_data["AutoLogin"] = false
-		Data.reset_data()
 
 func _on_login_button_pressed():
 	
-	$Foreground/LoginButton.disabled = true
-	
 	$Foreground/Return.disabled = true
+	$Foreground/SignUpButton.disabled = true
 	
 	Data.reset_data()
 	
@@ -41,7 +20,7 @@ func _on_login_button_pressed():
 	
 	var password = $Foreground/PasswordText.text
 	
-	Account.login(Request, email, password)
+	Account.signup(Request, email, password)
 	
 
 
@@ -66,18 +45,14 @@ func _on_Login(result, response_code, headers, body):
 	if response_code != 200:
 		clear()
 		OS.alert(str(response.error), "Error")
-		$Foreground/LoginButton.disabled = false
+		$Foreground/SignUpButton.disabled = false
 		$Foreground/Return.disabled = false
 		return
 		
 	print(response)
 	
 	Core.UUID = response["localId"]
-	
-	Core.Username = response["displayName"]
-	
-	
 
 
 func _on_return_pressed():
-	get_tree().change_scene_to_file("res://Login/SignUp.tscn")
+	get_tree().change_scene_to_file("res://Login/Login.tscn")

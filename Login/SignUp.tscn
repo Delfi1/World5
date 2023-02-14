@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvdu4lf7ef6q6"]
+[gd_scene load_steps=2 format=3 uid="uid://bol56s1kdau4o"]
 
-[ext_resource type="Script" path="res://Login/Login.gd" id="1_36fct"]
+[ext_resource type="Script" path="res://Login/SignUp.gd" id="1_b2arn"]
 
-[node name="Login" type="Control"]
+[node name="SignUp" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_36fct")
+script = ExtResource("1_b2arn")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -40,12 +40,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -64.0
-offset_right = 65.0
-offset_bottom = 28.0
+offset_left = -128.0
+offset_right = 129.0
+offset_bottom = 48.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
-text = "Beta Login"
+text = "Beta SignUp"
 horizontal_alignment = 1
 
 [node name="EmailLabel" type="Label" parent="Foreground"]
@@ -99,25 +99,25 @@ offset_right = 263.0
 offset_bottom = 441.0
 text = "Auto Login"
 
-[node name="LoginButton" type="Button" parent="Foreground"]
+[node name="SignUpButton" type="Button" parent="Foreground"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 450.0
 offset_right = 288.0
 offset_bottom = 490.0
-text = "Login"
+text = "SignUp"
 
 [node name="Return" type="Button" parent="Foreground"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 498.0
 offset_right = 320.0
 offset_bottom = 530.0
-text = "I don't have an account
-"
+text = "I already have an account..."
 flat = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="Foreground/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="Foreground/SignUpButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="Foreground/Return" to="." method="_on_return_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_Login"]

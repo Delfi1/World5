@@ -7,3 +7,7 @@ res://Main/main.gd
 res://Game/GameWindow.gd
 res://World/Core.gd
 res://World/Network.gd
+res://Forum/ForumWindow.gd
+res://Main/main.tscn
+res://Login/SignUp.tscn
+res://Login/SignUp.gd

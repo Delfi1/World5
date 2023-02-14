@@ -7,12 +7,12 @@ func _input(event):
 		change_window_fullscreen(self)
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	OS.alert("Game is not ready...", "Error")
+	self.queue_free()
+	return
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 	
