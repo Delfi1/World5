@@ -76,7 +76,7 @@ func _on_Login(result, response_code, headers, body):
 	
 	Core.Username = response["displayName"]
 	
-	
+	Core.idToken = response["idToken"]
 
 
 func _on_return_pressed():

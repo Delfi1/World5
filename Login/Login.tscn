@@ -108,6 +108,7 @@ offset_bottom = 490.0
 text = "Login"
 
 [node name="Return" type="Button" parent="Foreground"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 498.0
 offset_right = 320.0

@@ -1,12 +1,12 @@
 Button
 HTTPRequest
+Label
+LineEdit
+Panel
 ColorRect
 Window
-Label
-Panel
 Control
 CheckBox
 CanvasLayer
-LineEdit
 Camera2D
 Node2D

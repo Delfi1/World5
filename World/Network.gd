@@ -27,7 +27,8 @@ class Account:
 		var headers = ['Connect-Type: application/json']
 		
 		await Core.Firebase(Core.LoginUrl, Request, body, headers)
-	
+
+
 	func signup(Request : HTTPRequest, email: String, password: String):
 		if len(password) < 8:
 			OS.alert("Password must be 8 or more characters long")
@@ -49,10 +50,21 @@ class Account:
 		var headers = ['Connect-Type: application/json']
 		
 		await Core.Firebase(Core.SignUpUrl, Request, body, headers)
-	
-	func Get_Username():
-		pass
-	
+
+
+	func Change_Username(Username : String, Request : HTTPRequest):
+		if len(Username) < 4:
+			print("The name must be more than 4 characters long.")
+			return
+		
+		
+		var JsonObject = JSON.new()
+		var body = JsonObject.stringify({"idToken":Core.idToken, "displayName": Username, "returnSecureToken":false })
+		var headers = ['Connect-Type: application/json']
+		
+		var error = await Core.Firebase(Core.ChangeUrl, Request, body, headers)
+
+
 	func IsConnected():
 		return Core.UUID != null
 
