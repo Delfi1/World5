@@ -1,8 +1,8 @@
+Panel
 Label
 Button
 HTTPRequest
 LineEdit
-Panel
 ColorRect
 Window
 Control
