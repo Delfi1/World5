@@ -9,3 +9,5 @@ res://Login/SignUp.tscn
 res://Login/Login.gd
 res://World/Network.gd
 res://Main/main.gd
+res://Forum/Forum.gd
+res://Forum/ForumWindow.gd

@@ -13,6 +13,8 @@ func _ready():
 		get_tree().change_scene_to_file("res://Login/Login.tscn")
 		return
 	
+	$LVersion.text += Core.Version
+	
 	$Game.disabled = true
 	print("\n\nUUID: %s" % Core.UUID)
 	Profile()

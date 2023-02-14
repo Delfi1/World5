@@ -6,6 +6,16 @@ var Account = Network.Account.new()
 @onready
 var Info = $BackGround/ForeGround/Info
 
+func _input(event):
+	if Core.Username == null:
+		return
+	
+	if not len(Core.Username) > 4:
+		return
+	
+	if event.is_action("escape"):
+		self.queue_free()
+
 func _ready():
 	if not Account.IsConnected():
 		print("You are not connected!")

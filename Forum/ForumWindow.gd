@@ -5,9 +5,6 @@ func _input(event):
 	if event.is_action_pressed("F11"):
 		change_window_fullscreen(self)
 	
-	if event.is_action_pressed("escape") and self.visible:
-		_on_close_requested()
-	
 
 
 func change_window_fullscreen(window : Window):

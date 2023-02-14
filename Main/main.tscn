@@ -23,18 +23,18 @@ color = Color(0.498039, 0.603922, 0.431373, 1)
 [node name="Game" type="Button" parent="."]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 32.0
+offset_top = 24.0
 offset_right = 184.0
-offset_bottom = 88.0
+offset_bottom = 80.0
 theme_override_font_sizes/font_size = 24
 text = "Game"
 
 [node name="Forum" type="Button" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 112.0
-offset_right = 184.0
-offset_bottom = 168.0
+offset_left = 208.0
+offset_top = 24.0
+offset_right = 368.0
+offset_bottom = 80.0
 theme_override_font_sizes/font_size = 24
 text = "Forum"
 
@@ -43,9 +43,18 @@ layout_mode = 0
 offset_left = 1776.0
 offset_top = 24.0
 offset_right = 1896.0
-offset_bottom = 88.0
+offset_bottom = 80.0
 theme_override_font_sizes/font_size = 24
 text = "Exit"
+
+[node name="LVersion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 1008.0
+offset_right = 448.0
+offset_bottom = 1056.0
+theme_override_font_sizes/font_size = 32
+text = "Launcher Version: "
 
 [connection signal="pressed" from="Game" to="." method="_on_game_pressed"]
 [connection signal="pressed" from="Forum" to="." method="_on_forum_pressed"]
