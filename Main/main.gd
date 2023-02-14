@@ -13,6 +13,8 @@ func _ready():
 		get_tree().change_scene_to_file("res://Login/Login.tscn")
 		return
 	
+	save_version()
+	
 	$LVersion.text += Core.Version
 	
 	$Game.disabled = true
@@ -55,3 +57,14 @@ func Profile():
 	else:
 		var ChangeProfile = preload("res://Main/ChangeProfile.tscn").instantiate()
 		self.add_child(ChangeProfile)
+
+func save_version():
+	
+	var path = OS.get_executable_path().get_base_dir() + "\\Version.txt"
+	
+	print(path)
+	
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	
+	file.store_string(Core.Version)
+	

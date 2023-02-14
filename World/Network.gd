@@ -78,4 +78,5 @@ class Friends:
 
 
 class Server:
-	pass
+	func Check_Update():
+		pass
