@@ -5,6 +5,9 @@ var ForumWindow = preload("res://Forum/ForumWindow.tscn").instantiate()
 @onready
 var Account = Network.Account.new()
 
+@onready
+var Server = Network.Server.new()
+
 func _ready():
 	get_viewport().set_embedding_subwindows(false)
 	
@@ -19,7 +22,10 @@ func _ready():
 	
 	$Game.disabled = true
 	print("\n\nUUID: %s" % Core.UUID)
+	
 	Profile()
+	
+	Server.Check_Update($CheckRequest)
 
 func open_window(window : Window):
 	if window.visible:
@@ -58,6 +64,7 @@ func Profile():
 		var ChangeProfile = preload("res://Main/ChangeProfile.tscn").instantiate()
 		self.add_child(ChangeProfile)
 
+
 func save_version():
 	
 	var path = OS.get_executable_path().get_base_dir() + "\\Version.txt"
@@ -67,4 +74,38 @@ func save_version():
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	
 	file.store_string(Core.Version)
+
+
+func _on_request_completed(result, response_code, headers, body):
+	var response = body.get_string_from_utf8()
 	
+	if response_code != 200:
+		return
+	
+	if Core.Version != response:
+		OS.alert("Find new version!", "Updater")
+		
+		var path1 = OS.get_executable_path().get_base_dir() + "\\World.pck"
+		var path2 = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
+		
+		
+		Server.Update($UpdateRequest, path1, path2)
+
+
+func _on_update_completed(result, response_code, headers, body):
+	if response_code != 200:
+		OS.alert("Error")
+		var path1 = OS.get_executable_path().get_base_dir() + "\\World.pck"
+		var path2 = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
+		
+		var dir = DirAccess.remove_absolute(path1)
+		
+		var dir2 = DirAccess.rename_absolute(path2, path1)
+		return
+	
+	var path = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
+	
+	var dir = DirAccess.remove_absolute(path)
+	
+	OS.alert("Update was installed!", "Updater")
+

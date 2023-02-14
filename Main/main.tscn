@@ -56,6 +56,12 @@ offset_bottom = 1056.0
 theme_override_font_sizes/font_size = 32
 text = "Launcher Version: "
 
+[node name="CheckRequest" type="HTTPRequest" parent="."]
+
+[node name="UpdateRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="Game" to="." method="_on_game_pressed"]
 [connection signal="pressed" from="Forum" to="." method="_on_forum_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="request_completed" from="CheckRequest" to="." method="_on_request_completed"]
+[connection signal="request_completed" from="UpdateRequest" to="." method="_on_update_completed"]

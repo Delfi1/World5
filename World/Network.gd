@@ -78,5 +78,13 @@ class Friends:
 
 
 class Server:
-	func Check_Update():
-		pass
+	func Check_Update(Request : HTTPRequest):
+		Request.request(Core.VerUrl)
+	
+	func Update(Request : HTTPRequest, path1, path2):
+		
+		var dir = DirAccess.rename_absolute(path1, path2)
+		
+		Request.set_download_file("World.pck")
+		Request.request(Core.PckUrl)
+	
