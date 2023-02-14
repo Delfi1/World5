@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dhwb570lpwuhi"]
+
+[ext_resource type="FontFile" uid="uid://bp13qdrcwt0sr" path="res://assets/Fonts/Kenney Mini Square.ttf" id="1_27l8h"]
+
+[resource]
+base_font = ExtResource("1_27l8h")

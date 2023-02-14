@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh6jjeaxtafkt"]
+
+[ext_resource type="Script" path="res://Forum/ForumWindow.gd" id="1_p5sk0"]
+[ext_resource type="PackedScene" uid="uid://xl8e8i184c6o" path="res://Forum/Forum.tscn" id="2_1nqbe"]
+
+[node name="ForumWindow" type="Window"]
+title = "Forum"
+size = Vector2i(1920, 1080)
+exclusive = true
+unresizable = true
+min_size = Vector2i(800, 600)
+max_size = Vector2i(1920, 1080)
+script = ExtResource("1_p5sk0")
+
+[node name="Forum" parent="." instance=ExtResource("2_1nqbe")]
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+
+[editable path="Forum"]

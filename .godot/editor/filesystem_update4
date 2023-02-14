@@ -1,0 +1,9 @@
+res://Game/Game.tscn
+res://Login/Login.gd
+res://Forum/ForumWindow.tscn
+res://Forum/Forum.tscn
+res://Login/Login.tscn
+res://Main/main.gd
+res://Game/GameWindow.gd
+res://World/Core.gd
+res://World/Network.gd

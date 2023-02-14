@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdvwc1qluy5u2"]
+
+[ext_resource type="Script" path="res://Main/main.gd" id="1_ptyl1"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ptyl1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.498039, 0.603922, 0.431373, 1)
+
+[node name="Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 184.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 24
+text = "Game"
+
+[node name="Forum" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 112.0
+offset_right = 184.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 24
+text = "Forum"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1776.0
+offset_top = 24.0
+offset_right = 1896.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+
+[connection signal="pressed" from="Game" to="." method="_on_game_pressed"]
+[connection signal="pressed" from="Forum" to="." method="_on_forum_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

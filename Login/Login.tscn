@@ -1,0 +1,113 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvdu4lf7ef6q6"]
+
+[ext_resource type="Script" path="res://Login/Login.gd" id="1_36fct"]
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_36fct")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45098, 0.396078, 0.894118, 1)
+
+[node name="Foreground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -270.0
+offset_right = 192.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.713726, 0.403922, 1)
+
+[node name="LoginLabel" type="Label" parent="Foreground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 65.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Beta Login"
+horizontal_alignment = 1
+
+[node name="EmailLabel" type="Label" parent="Foreground"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 100.0
+offset_right = 320.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 24
+text = "Account Email"
+horizontal_alignment = 1
+
+[node name="EmailText" type="LineEdit" parent="Foreground"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 156.0
+offset_right = 320.0
+offset_bottom = 187.0
+
+[node name="PasswordText" type="LineEdit" parent="Foreground"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 300.0
+offset_right = 320.0
+offset_bottom = 331.0
+secret = true
+
+[node name="PasswordLabel" type="Label" parent="Foreground"]
+layout_mode = 1
+offset_left = 64.0
+offset_top = 244.0
+offset_right = 320.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 24
+text = "Account Password"
+horizontal_alignment = 1
+
+[node name="Remember" type="CheckBox" parent="Foreground"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 378.0
+offset_right = 263.0
+offset_bottom = 409.0
+text = "Remember me"
+
+[node name="AutoLogin" type="CheckBox" parent="Foreground"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 410.0
+offset_right = 263.0
+offset_bottom = 441.0
+text = "Auto Login"
+
+[node name="LoginButton" type="Button" parent="Foreground"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 450.0
+offset_right = 288.0
+offset_bottom = 490.0
+text = "Login"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Foreground/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_Login"]
