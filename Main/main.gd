@@ -23,8 +23,6 @@ func _ready():
 	$Game.disabled = true
 	print("\n\nUUID: %s" % Core.UUID)
 	
-	Profile()
-	
 	Server.Check_Update($CheckRequest)
 
 func open_window(window : Window):
@@ -88,8 +86,11 @@ func _on_request_completed(result, response_code, headers, body):
 		var path1 = OS.get_executable_path().get_base_dir() + "\\World.pck"
 		var path2 = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
 		
-		
 		Server.Update($UpdateRequest, path1, path2)
+		return
+	
+	Profile()
+	
 
 
 func _on_update_completed(result, response_code, headers, body):
@@ -108,4 +109,4 @@ func _on_update_completed(result, response_code, headers, body):
 	var dir = DirAccess.remove_absolute(path)
 	
 	OS.alert("Update was installed!", "Updater")
-
+	get_tree().quit()
