@@ -78,9 +78,18 @@ func _on_request_completed(result, response_code, headers, body):
 	var response = body.get_string_from_utf8()
 	
 	if response_code != 200:
+		print(result, headers)
 		return
 	
-	if Core.Version != response:
+	#str_result = str_result.replace(c,"")
+	
+	var ver = Core.Version[0] * 1000 + Core.Version[2] * 100 + Core.Version[4] * 10 + Core.Version[6]
+	
+	var server_ver = response[0] * 1000 + response[2] * 100 + response[4] * 10 + response[6]
+	
+	print("Ver: '%s'\nServer_Ver: '%s'" % [ver, server_ver])
+	
+	if ver < server_ver:
 		OS.alert("Find new version: %s !" % response, "Updater")
 		
 		var path1 = OS.get_executable_path().get_base_dir() + "\\World.pck"
@@ -95,20 +104,21 @@ func _on_request_completed(result, response_code, headers, body):
 
 func _on_update_completed(result, response_code, headers, body):
 	if response_code != 200:
+		print(result, headers, body)
 		OS.alert("Error " + response_code)
 		var path1 = OS.get_executable_path().get_base_dir() + "\\World.pck"
 		var path2 = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
 		
-		var dir = DirAccess.remove_absolute(path1)
+		DirAccess.remove_absolute(path1)
 		
-		var dir2 = DirAccess.rename_absolute(path2, path1)
+		DirAccess.rename_absolute(path2, path1)
 		
 		get_tree().change_scene_to_file("res://Login/Login.tscn")
 		return
 	
 	var path = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
 	
-	var dir = DirAccess.remove_absolute(path)
+	DirAccess.remove_absolute(path)
 	
 	OS.alert("Update was installed!", "Updater")
 	get_tree().change_scene_to_file("res://Login/Login.tscn")

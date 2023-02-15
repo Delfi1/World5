@@ -22,12 +22,9 @@ func _ready():
 		get_tree().change_scene_to_file("res://Login/Login.tscn")
 		return
 	
-	var JsonObject = JSON.new()
-	
-	var body = JsonObject.stringify({"idToken": Core.idToken})
+	var body = JSON.stringify({"idToken": Core.idToken})
 	
 	var headers = ['Connect-Type: application/json']
-	
 	
 	Core.Firebase(Core.GetData, $Get, body, headers)
 
@@ -36,6 +33,7 @@ func _on_request_completed(result, response_code, headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
 	
 	if response_code != 200:
+		print(result, headers)
 		OS.alert(str(response.error), "Error")
 		return
 	
@@ -69,6 +67,7 @@ func _on_save_completed(result, response_code, headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
 	
 	if response_code != 200:
+		print(result, headers)
 		OS.alert(str(response.error), "Error")
 		return
 	

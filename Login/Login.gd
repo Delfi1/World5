@@ -64,6 +64,7 @@ func _on_Login(result, response_code, headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
 	
 	if response_code != 200:
+		print(result, headers)
 		clear()
 		OS.alert(str(response.error), "Error")
 		$Foreground/LoginButton.disabled = false

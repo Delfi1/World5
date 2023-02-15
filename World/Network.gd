@@ -21,8 +21,7 @@ class Account:
 		
 		Data.save_data(Data.account_path)
 		
-		var JsonObject = JSON.new()
-		var body = JsonObject.stringify({'email' : email, 'password' : password})
+		var body = JSON.stringify({'email' : email, 'password' : password})
 		
 		var headers = ['Connect-Type: application/json']
 		
@@ -44,12 +43,11 @@ class Account:
 		
 		Data.save_data(Data.account_path)
 		
-		var JsonObject = JSON.new()
-		var body = JsonObject.stringify({'email' : email, 'password' : password})
+		var body = JSON.stringify({'email' : email, 'password' : password})
 		
 		var headers = ['Connect-Type: application/json']
 		
-		await Core.Firebase(Core.SignUpUrl, Request, body, headers)
+		Core.Firebase(Core.SignUpUrl, Request, body, headers)
 
 
 	func Change_Username(Username : String, Request : HTTPRequest):
@@ -58,12 +56,12 @@ class Account:
 			return
 		
 		
-		var JsonObject = JSON.new()
-		var body = JsonObject.stringify({"idToken":Core.idToken, "displayName": Username, "returnSecureToken":false })
+		var body = JSON.stringify({"idToken":Core.idToken, "displayName": Username, "returnSecureToken":false })
 		var headers = ['Connect-Type: application/json']
 		
-		var error = await Core.Firebase(Core.ChangeUrl, Request, body, headers)
-
+		Core.Firebase(Core.ChangeUrl, Request, body, headers)
+		
+		
 
 	func LoadSaveUser():
 		pass
@@ -88,7 +86,7 @@ class Server:
 	
 	func Update(Request : HTTPRequest, path1, path2):
 		
-		var dir = DirAccess.rename_absolute(path1, path2)
+		DirAccess.rename_absolute(path1, path2)
 		
 		Request.set_download_file("World.pck")
 		Request.request(Core.PckUrl)

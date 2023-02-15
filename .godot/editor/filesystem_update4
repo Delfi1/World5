@@ -2,3 +2,8 @@ res://Forum/Chat.tscn
 res://Main/main.tscn
 res://Forum/ForumWindow.tscn
 res://Forum/Forum.tscn
+res://World/Network.gd
+res://Main/ChangeProfile.gd
+res://Login/Login.gd
+res://Main/main.gd
+res://World/Core.gd
