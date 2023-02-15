@@ -65,6 +65,10 @@ class Account:
 		var error = await Core.Firebase(Core.ChangeUrl, Request, body, headers)
 
 
+	func LoadSaveUser():
+		pass
+
+
 	func IsConnected():
 		return Core.UUID != null
 

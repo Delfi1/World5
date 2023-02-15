@@ -1,10 +1,10 @@
-HTTPRequest
 Panel
+Window
+HTTPRequest
 Label
 Button
 LineEdit
 ColorRect
-Window
 Control
 CheckBox
 CanvasLayer

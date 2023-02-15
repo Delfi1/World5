@@ -1,14 +1,6 @@
-res://Main/ChangeProfile.tscn
-res://Main/ChangeProfile.gd
+res://Forum/Chat.tscn
 res://World/Core.gd
-res://Login/Login.tscn
+res://Main/main.tscn
+res://World/Network.gd
 res://Forum/ForumWindow.tscn
 res://Forum/Forum.tscn
-res://Main/main.tscn
-res://Login/SignUp.tscn
-res://Login/Login.gd
-res://World/Network.gd
-res://Main/main.gd
-res://Forum/Forum.gd
-res://Forum/ForumWindow.gd
-res://Forum/Update.tscn
