@@ -1,7 +1,4 @@
 res://Forum/Chat.tscn
-res://World/Core.gd
 res://Main/main.tscn
-res://World/Network.gd
 res://Forum/ForumWindow.tscn
 res://Forum/Forum.tscn
-res://Main/main.gd

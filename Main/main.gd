@@ -95,13 +95,15 @@ func _on_request_completed(result, response_code, headers, body):
 
 func _on_update_completed(result, response_code, headers, body):
 	if response_code != 200:
-		OS.alert("Error")
+		OS.alert("Error " + response_code)
 		var path1 = OS.get_executable_path().get_base_dir() + "\\World.pck"
 		var path2 = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
 		
 		var dir = DirAccess.remove_absolute(path1)
 		
 		var dir2 = DirAccess.rename_absolute(path2, path1)
+		
+		get_tree().change_scene_to_file("res://Login/Login.tscn")
 		return
 	
 	var path = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
@@ -109,7 +111,7 @@ func _on_update_completed(result, response_code, headers, body):
 	var dir = DirAccess.remove_absolute(path)
 	
 	OS.alert("Update was installed!", "Updater")
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Login/Login.tscn")
 
 
 func _on_timer_timeout():
