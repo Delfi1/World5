@@ -2,11 +2,14 @@ extends Control
 
 var ForumWindow = preload("res://Forum/ForumWindow.tscn").instantiate()
 
+var Forum = preload("res://Forum/Forum.tscn")
+
 @onready
 var Account = Network.Account.new()
 
 @onready
 var Server = Network.Server.new()
+
 
 func _ready():
 	get_viewport().set_embedding_subwindows(false)
@@ -48,9 +51,10 @@ func _on_exit_pressed():
 
 
 func _on_forum_pressed():
-	open_window(ForumWindow)
-	ForumWindow.min_size = Vector2i(800, 500)
-	ForumWindow.max_size = Vector2i(get_viewport().size.x, get_viewport().size.y)
+	get_tree().change_scene_to_packed(Forum)
+	#open_window(ForumWindow)
+	#ForumWindow.min_size = Vector2i(800, 500)
+	#ForumWindow.max_size = Vector2i(get_viewport().size.x, get_viewport().size.y)
 
 
 func Profile():
@@ -123,7 +127,8 @@ func _on_update_completed(result, response_code, headers, body):
 	DirAccess.remove_absolute(path)
 	
 	OS.alert("Update was installed!", "Updater")
-	get_tree().quit()
+	await get_tree().create_timer(1000).timeout
+	get_tree().reload_current_scene()
 
 
 func _on_timer_timeout():

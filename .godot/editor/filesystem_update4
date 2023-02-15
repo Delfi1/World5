@@ -1,10 +1,6 @@
+res://Main/ChangeProfile.tscn
+res://Main/main.tscn
 res://Forum/Forum.tscn
 res://Login/Login.tscn
-res://Login/Login.gd
-res://Main/main.tscn
-res://Forum/ForumWindow.tscn
-res://Login/SignUp.gd
 res://World/Core.gd
-res://Main/ChangeProfile.tscn
-res://Main/ChangeProfile.gd
 res://Main/main.gd

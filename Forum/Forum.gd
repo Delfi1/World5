@@ -7,4 +7,5 @@ func _on_info_pressed():
 
 
 func _on_close_pressed():
-	get_parent().visible = false
+	get_tree().change_scene_to_file("res://Main/main.tscn")
+	#get_parent().visible = false
