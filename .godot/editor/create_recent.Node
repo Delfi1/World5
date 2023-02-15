@@ -1,3 +1,5 @@
+CheckBox
+CheckButton
 Timer
 Panel
 Window
@@ -7,7 +9,6 @@ Button
 LineEdit
 ColorRect
 Control
-CheckBox
 CanvasLayer
 Camera2D
 Node2D

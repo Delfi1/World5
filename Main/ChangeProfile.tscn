@@ -63,15 +63,14 @@ LastLoginAt:
 UUID:
 "
 
-[node name="UsernameLabel" type="Label" parent="BackGround/ForeGround"]
+[node name="UsernameCheck" type="CheckBox" parent="BackGround/ForeGround"]
 layout_mode = 0
-offset_left = 32.0
+offset_left = 24.0
 offset_top = 216.0
-offset_right = 136.0
+offset_right = 137.0
 offset_bottom = 248.0
 text = "Username:"
-horizontal_alignment = 2
-vertical_alignment = 1
+alignment = 2
 
 [node name="UsernameText" type="LineEdit" parent="BackGround/ForeGround"]
 layout_mode = 0
@@ -79,6 +78,13 @@ offset_left = 144.0
 offset_top = 216.0
 offset_right = 448.0
 offset_bottom = 247.0
+
+[node name="PasswordText" type="LineEdit" parent="BackGround/ForeGround"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 464.0
+offset_right = 448.0
+offset_bottom = 495.0
 
 [node name="SaveButton" type="Button" parent="BackGround/ForeGround"]
 layout_mode = 0
@@ -89,6 +95,15 @@ offset_bottom = 544.0
 text = "Save changes"
 
 [node name="Save" type="HTTPRequest" parent="BackGround/ForeGround"]
+
+[node name="PasswordCheck" type="CheckBox" parent="BackGround/ForeGround"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 464.0
+offset_right = 136.0
+offset_bottom = 496.0
+text = "Password:"
+alignment = 2
 
 [node name="Get" type="HTTPRequest" parent="."]
 

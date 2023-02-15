@@ -116,7 +116,6 @@ func _on_update_completed(result, response_code, headers, body):
 		
 		DirAccess.rename_absolute(path2, path1)
 		
-		get_tree().change_scene_to_file("res://Login/Login.tscn")
 		return
 	
 	var path = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
