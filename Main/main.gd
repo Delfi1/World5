@@ -124,7 +124,7 @@ func _on_update_completed(result, response_code, headers, body):
 	DirAccess.remove_absolute(path)
 	
 	OS.alert("Update was installed!", "Updater")
-	get_tree().change_scene_to_file("res://Login/Login.tscn")
+	get_tree().quit()
 
 
 func _on_timer_timeout():
