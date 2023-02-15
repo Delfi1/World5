@@ -83,6 +83,7 @@ class Friends:
 
 class Server:
 	func Check_Update(Request : HTTPRequest):
+		print("Check for updates...")
 		Request.request(Core.VerUrl)
 	
 	func Update(Request : HTTPRequest, path1, path2):

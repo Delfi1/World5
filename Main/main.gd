@@ -23,7 +23,7 @@ func _ready():
 	$Game.disabled = true
 	print("\n\nUUID: %s" % Core.UUID)
 	
-	Server.Check_Update($CheckRequest)
+	$Timer.start(10)
 
 func open_window(window : Window):
 	if window.visible:
@@ -81,7 +81,7 @@ func _on_request_completed(result, response_code, headers, body):
 		return
 	
 	if Core.Version != response:
-		OS.alert("Find new version!", "Updater")
+		OS.alert("Find new version: %s !" % response, "Updater")
 		
 		var path1 = OS.get_executable_path().get_base_dir() + "\\World.pck"
 		var path2 = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
@@ -110,3 +110,7 @@ func _on_update_completed(result, response_code, headers, body):
 	
 	OS.alert("Update was installed!", "Updater")
 	get_tree().quit()
+
+
+func _on_timer_timeout():
+	Server.Check_Update($CheckRequest)
