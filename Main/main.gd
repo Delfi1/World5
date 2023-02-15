@@ -128,4 +128,6 @@ func _on_update_completed(result, response_code, headers, body):
 
 
 func _on_timer_timeout():
+	$Timer.stop()
 	Server.Check_Update($CheckRequest)
+	$Timer.start(10)
