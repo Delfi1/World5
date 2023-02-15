@@ -18,7 +18,7 @@ func _ready():
 	
 	save_version()
 	
-	$LVersion.text = "Launcher Version: " + str(Core.Version)
+	$LVersion.text = "Server Version: Loading...\nLauncher Version: " + str(Core.Version)
 	
 	$Game.disabled = true
 	print("\n\nUUID: %s" % Core.UUID)

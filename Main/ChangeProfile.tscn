@@ -80,7 +80,7 @@ offset_top = 216.0
 offset_right = 448.0
 offset_bottom = 247.0
 
-[node name="Button" type="Button" parent="BackGround/ForeGround"]
+[node name="SaveButton" type="Button" parent="BackGround/ForeGround"]
 layout_mode = 0
 offset_left = 160.0
 offset_top = 504.0
@@ -92,6 +92,6 @@ text = "Save changes"
 
 [node name="Get" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="BackGround/ForeGround/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BackGround/ForeGround/SaveButton" to="." method="_on_button_pressed"]
 [connection signal="request_completed" from="BackGround/ForeGround/Save" to="." method="_on_save_completed"]
 [connection signal="request_completed" from="Get" to="." method="_on_request_completed"]

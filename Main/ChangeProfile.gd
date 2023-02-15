@@ -57,7 +57,7 @@ func change_info(user : Dictionary):
 
 
 func _on_button_pressed():
-	
+	$BackGround/ForeGround/SaveButton.disabled = true
 	var Username = $BackGround/ForeGround/UsernameText.text
 	
 	Account.Change_Username(Username, $BackGround/ForeGround/Save)
@@ -69,11 +69,12 @@ func _on_save_completed(result, response_code, headers, body):
 	if response_code != 200:
 		print(result, headers)
 		OS.alert(str(response.error), "Error")
+		$BackGround/ForeGround/SaveButton.disabled = false
 		return
 	
 	
 	print(response)
 	Core.Username = response["displayName"]
 	Core.UUID = response["localId"]
-	
+	$BackGround/ForeGround/SaveButton.disabled = false
 	self.queue_free()

@@ -54,7 +54,8 @@ offset_top = 984.0
 offset_right = 440.0
 offset_bottom = 1064.0
 theme_override_font_sizes/font_size = 24
-text = "Launcher Version: "
+text = "Server Version: Loading... 
+Launcher Version: "
 vertical_alignment = 2
 
 [node name="CheckRequest" type="HTTPRequest" parent="."]

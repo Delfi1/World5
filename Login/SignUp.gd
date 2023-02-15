@@ -52,6 +52,8 @@ func _on_Login(result, response_code, headers, body):
 	print(response)
 	
 	Core.UUID = response["localId"]
+	
+	Core.idToken = response["idToken"]
 
 
 func _on_return_pressed():
