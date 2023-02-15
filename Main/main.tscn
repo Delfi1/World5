@@ -49,12 +49,13 @@ text = "Exit"
 
 [node name="LVersion" type="Label" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 1008.0
-offset_right = 448.0
-offset_bottom = 1056.0
-theme_override_font_sizes/font_size = 32
+offset_left = 16.0
+offset_top = 984.0
+offset_right = 440.0
+offset_bottom = 1064.0
+theme_override_font_sizes/font_size = 24
 text = "Launcher Version: "
+vertical_alignment = 2
 
 [node name="CheckRequest" type="HTTPRequest" parent="."]
 

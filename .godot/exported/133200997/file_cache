@@ -2,12 +2,12 @@ res://assets/Resources/DF1.tres::bd02de29955133e790ac1b666b7d14d3::1675599748::r
 res://assets/Resources/FV1.tres::889d113da6caf561b6268c1b9cd4d969::1676138428::res://.godot/exported/133200997/export-84398d65ae150f96eae449ca469e4d76-FV1.res
 res://assets/Resources/Gradient.tres::a517bb7a2aeb78a6857c1a385ac16c0d::1674648224::res://.godot/exported/133200997/export-1f4212daf5daa8cb1cfbd92e003394d9-Gradient.res
 res://assets/Resources/WorldTheme.tres::6dacf34201fbda2147f95584dcabb8df::1674648224::res://.godot/exported/133200997/export-479177eb8072a2e433b4e3257dbcf249-WorldTheme.res
-res://Forum/Forum.tscn::3dc993b771273a712076721aa7f7bfcd::1676477339::res://.godot/exported/133200997/export-43749d6b58adaf466af13365b038a501-Forum.scn
-res://Forum/ForumWindow.tscn::abef669fdce2d298baef3ef12236002c::1676477339::res://.godot/exported/133200997/export-211f6d308a36813cbfb18026c1cc2b01-ForumWindow.scn
+res://Forum/Forum.tscn::3dc993b771273a712076721aa7f7bfcd::1676477943::res://.godot/exported/133200997/export-43749d6b58adaf466af13365b038a501-Forum.scn
+res://Forum/ForumWindow.tscn::abef669fdce2d298baef3ef12236002c::1676477943::res://.godot/exported/133200997/export-211f6d308a36813cbfb18026c1cc2b01-ForumWindow.scn
 res://Game/Game.tscn::2834c7595ccae2c72c01ddfb578618c9::1676378662::res://.godot/exported/133200997/export-015fcee914f59389e560071981165e64-Game.scn
 res://Game/GameWindow.tscn::59740e07dabd091b9a10d4c94de49264::1676126067::res://.godot/exported/133200997/export-e3b77e84af4430ae465ea21d816774f5-GameWindow.scn
 res://Login/Login.tscn::edf9d469720a77b16e86378bd37f17c6::1676398747::res://.godot/exported/133200997/export-4668098d83f9758b356204e5d4face05-Login.scn
 res://Login/SignUp.tscn::cb5e0c9d793082c275bc11a9d9528732::1676398747::res://.godot/exported/133200997/export-5da72effad4e708e17d056fcb5249042-SignUp.scn
 res://Main/ChangeProfile.tscn::0edc9143b43160df101994aff249a329::1676398747::res://.godot/exported/133200997/export-e568a6314cade28d52453e99375deee8-ChangeProfile.scn
-res://Main/main.tscn::068496ea24189c6a49e00c213d945a0e::1676477338::res://.godot/exported/133200997/export-cdd813ab38d3bd8e260b860aae2a8731-main.scn
+res://Main/main.tscn::cca963b6747bbb6edff47f8a8fb8f0cf::1676477943::res://.godot/exported/133200997/export-cdd813ab38d3bd8e260b860aae2a8731-main.scn
 res://Forum/Chat.tscn::3fb18dc6b368553d099a5f38a1828900::1676474751::res://.godot/exported/133200997/export-41adba1949920330bc1050a31d6fcd6a-Chat.scn

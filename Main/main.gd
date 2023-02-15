@@ -18,12 +18,14 @@ func _ready():
 	
 	save_version()
 	
-	$LVersion.text += Core.Version
+	$LVersion.text = "Launcher Version: " + str(Core.Version)
 	
 	$Game.disabled = true
 	print("\n\nUUID: %s" % Core.UUID)
 	
-	$Timer.start(60)
+	Profile()
+	
+	$Timer.start(5)
 
 func open_window(window : Window):
 	if window.visible:
@@ -56,9 +58,11 @@ func Profile():
 		if len(Core.Username) > 4:
 			return
 		
+		$Timer.queue_free()
 		var ChangeProfile = preload("res://Main/ChangeProfile.tscn").instantiate()
 		self.add_child(ChangeProfile)
 	else:
+		$Timer.queue_free()
 		var ChangeProfile = preload("res://Main/ChangeProfile.tscn").instantiate()
 		self.add_child(ChangeProfile)
 
@@ -81,7 +85,8 @@ func _on_request_completed(result, response_code, headers, body):
 		print(result, headers)
 		return
 	
-	#str_result = str_result.replace(c,"")
+	$LVersion.text = "Server Version: " + str(response)
+	$LVersion.text += "\nLauncher Version: " + str(Core.Version)
 	
 	var ver = int(Core.Version[0]) * 1000 + int(Core.Version[2]) * 100 + int(Core.Version[4]) * 10 + int(Core.Version[6])
 	
@@ -97,8 +102,6 @@ func _on_request_completed(result, response_code, headers, body):
 		
 		Server.Update($UpdateRequest, path1, path2)
 		return
-	
-	Profile()
 	
 
 
