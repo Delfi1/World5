@@ -7,3 +7,4 @@ res://Login/SignUp.gd
 res://World/Core.gd
 res://Main/ChangeProfile.tscn
 res://Main/ChangeProfile.gd
+res://Main/main.gd

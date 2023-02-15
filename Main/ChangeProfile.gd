@@ -60,6 +60,11 @@ func _on_button_pressed():
 	$BackGround/ForeGround/SaveButton.disabled = true
 	var Username = $BackGround/ForeGround/UsernameText.text
 	
+	if len(Username) < 4:
+		OS.alert("Username must be more than 4 characters!", "Error")
+		$BackGround/ForeGround/SaveButton.disabled = false
+	
+	
 	Account.Change_Username(Username, $BackGround/ForeGround/Save)
 
 

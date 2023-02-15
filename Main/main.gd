@@ -25,7 +25,7 @@ func _ready():
 	
 	Profile()
 	
-	$Timer.start(5)
+	$Timer.start(10)
 
 func open_window(window : Window):
 	if window.visible:
