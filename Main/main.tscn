@@ -61,7 +61,7 @@ text = "Launcher Version: "
 [node name="UpdateRequest" type="HTTPRequest" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 60.0
 
 [connection signal="pressed" from="Game" to="." method="_on_game_pressed"]
 [connection signal="pressed" from="Forum" to="." method="_on_forum_pressed"]

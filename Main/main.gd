@@ -23,7 +23,7 @@ func _ready():
 	$Game.disabled = true
 	print("\n\nUUID: %s" % Core.UUID)
 	
-	$Timer.start(10)
+	$Timer.start(60)
 
 func open_window(window : Window):
 	if window.visible:
@@ -83,9 +83,9 @@ func _on_request_completed(result, response_code, headers, body):
 	
 	#str_result = str_result.replace(c,"")
 	
-	var ver = Core.Version[0] * 1000 + Core.Version[2] * 100 + Core.Version[4] * 10 + Core.Version[6]
+	var ver = int(Core.Version[0]) * 1000 + int(Core.Version[2]) * 100 + int(Core.Version[4]) * 10 + int(Core.Version[6])
 	
-	var server_ver = response[0] * 1000 + response[2] * 100 + response[4] * 10 + response[6]
+	var server_ver = int(response[0]) * 1000 + int(response[2]) * 100 + int(response[4]) * 10 + int(response[6])
 	
 	print("Ver: '%s'\nServer_Ver: '%s'" % [ver, server_ver])
 	

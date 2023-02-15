@@ -25,7 +25,7 @@ class Account:
 		
 		var headers = ['Connect-Type: application/json']
 		
-		await Core.Firebase(Core.LoginUrl, Request, body, headers)
+		Core.Firebase(Core.LoginUrl, Request, body, headers)
 
 
 	func signup(Request : HTTPRequest, email: String, password: String):
