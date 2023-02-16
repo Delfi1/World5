@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://3xxqjpn6yubp"]
+
+[ext_resource type="PackedScene" uid="uid://r8akqempa8vo" path="res://Main/ChangeProfile.tscn" id="1_p3oj4"]
+
+[node name="ProfileWindow" type="Window"]
+initial_position = 1
+title = "Profile"
+size = Vector2i(512, 576)
+unresizable = true
+always_on_top = true
+min_size = Vector2i(512, 576)
+max_size = Vector2i(512, 576)
+
+[node name="ChangeProfile" parent="." instance=ExtResource("1_p3oj4")]
+
+[connection signal="close_requested" from="." to="ChangeProfile" method="_on_profile_window_close_requested"]

@@ -106,7 +106,7 @@ func _on_save_completed(result, response_code, headers, body):
 	Core.Username = response["displayName"]
 	Core.UUID = response["localId"]
 	SaveButton.disabled = false
-	self.queue_free()
+	get_parent().queue_free()
 
 func _process(delta):
 	Choosen(UsernameCheck, $BackGround/ForeGround/UsernameText)
@@ -117,5 +117,8 @@ func Choosen(Check : CheckBox,Line : LineEdit):
 	Check.button_pressed = (len(Line.text) > 1)
 
 
-func _on_close_pressed():
-	self.queue_free()
+func _on_profile_window_close_requested():
+	if len(Core.Username) <= 4:
+		return
+	
+	get_parent().queue_free()

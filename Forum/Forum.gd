@@ -2,8 +2,9 @@ extends Control
 
 
 func _on_info_pressed():
-	var ChangeProfile = preload("res://Main/ChangeProfile.tscn").instantiate()
+	var ChangeProfile = preload("res://Main/ProfileWindow.tscn").instantiate()
 	self.add_child(ChangeProfile)
+	ChangeProfile.popup()
 
 
 func _on_close_pressed():

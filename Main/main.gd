@@ -10,6 +10,7 @@ var Account = Network.Account.new()
 @onready
 var Server = Network.Server.new()
 
+var ProfileWindow = preload("res://Main/ProfileWindow.tscn").instantiate()
 
 func _ready():
 	get_viewport().set_embedding_subwindows(false)
@@ -58,17 +59,15 @@ func _on_forum_pressed():
 
 
 func Profile():
-	if Core.Username != null:
-		if len(Core.Username) > 4:
-			return
-		
-		$Timer.queue_free()
-		var ChangeProfile = preload("res://Main/ChangeProfile.tscn").instantiate()
-		self.add_child(ChangeProfile)
-	else:
-		$Timer.queue_free()
-		var ChangeProfile = preload("res://Main/ChangeProfile.tscn").instantiate()
-		self.add_child(ChangeProfile)
+	if Core.Username == null:
+		Core.Username = ""
+	if len(Core.Username) > 4:
+		return
+	
+	
+	$Timer.queue_free()
+	self.add_child(ProfileWindow)
+	ProfileWindow.popup()
 
 
 func save_version():
