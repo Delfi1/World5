@@ -1,12 +1,14 @@
 extends Node
 
-var Version = "0.0.1.7"
+var Version = "0.0.1.8"
 
 var UUID = null
 
 var idToken = null
 
 var Username = null
+
+var stats = null
 
 var WebAPIKey = "AIzaSyAWHS5A70xTul-YML2ZWH7lntxeOxUn7XQ"
 

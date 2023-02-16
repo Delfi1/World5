@@ -60,8 +60,7 @@ text = "Username:
 Email:
 CreatedAt:
 LastLoginAt:
-UUID:
-"
+UUID:"
 
 [node name="UsernameCheck" type="CheckBox" parent="BackGround/ForeGround"]
 layout_mode = 0

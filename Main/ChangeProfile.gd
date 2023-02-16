@@ -26,6 +26,10 @@ func _input(event):
 		self.queue_free()
 
 func _ready():
+	
+	if Core.stats != null:
+		Info.text = "Username: '%s' \nEmail: '%s' \nCreatedAt: '%s' \nLastLoginAt: '%s' \nUUID: '%s'" % Core.stats
+	
 	if not Account.IsConnected():
 		print("You are not connected!")
 		get_tree().change_scene_to_file("res://Login/Login.tscn")
@@ -59,6 +63,8 @@ func change_info(user : Dictionary):
 		return
 	
 	var stats = [user["displayName"], user["email"], user["createdAt"], user["lastLoginAt"], Core.UUID]
+	
+	Core.stats = stats
 	
 	Info.text = "Username: '%s' \nEmail: '%s' \nCreatedAt: '%s' \nLastLoginAt: '%s' \nUUID: '%s'" % stats
 	
