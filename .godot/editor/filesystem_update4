@@ -4,3 +4,4 @@ res://Login/Login.tscn
 res://Main/ChangeProfile.tscn
 res://Main/ChangeProfile.gd
 res://World/Core.gd
+res://Main/main.gd

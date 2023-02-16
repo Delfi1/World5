@@ -127,8 +127,8 @@ func _on_update_completed(result, response_code, headers, body):
 	DirAccess.remove_absolute(path)
 	
 	OS.alert("Update was installed!", "Updater")
-	await get_tree().create_timer(1000).timeout
-	get_tree().reload_current_scene()
+	OS.execute(OS.get_executable_path(), [])
+	get_tree().quit()
 
 
 func _on_timer_timeout():
