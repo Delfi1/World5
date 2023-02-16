@@ -28,12 +28,21 @@ offset_right = 176.0
 offset_bottom = 72.0
 text = "User Info"
 
-[node name="Chat" type="Button" parent="."]
+[node name="Friends" type="Button" parent="."]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 88.0
 offset_right = 176.0
 offset_bottom = 136.0
+disabled = true
+text = "Friends"
+
+[node name="Chat" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 152.0
+offset_right = 176.0
+offset_bottom = 200.0
 disabled = true
 text = "Chat"
 
@@ -50,5 +59,4 @@ grow_horizontal = 0
 text = "Close"
 
 [connection signal="pressed" from="Info" to="." method="_on_info_pressed"]
-[connection signal="pressed" from="Chat" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

@@ -127,6 +127,7 @@ func _on_update_completed(result, response_code, headers, body):
 	
 	OS.alert("Update was installed! Restarting...", "Updater")
 	OS.execute(OS.get_executable_path(), [])
+	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()
 
 

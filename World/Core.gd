@@ -1,6 +1,6 @@
 extends Node
 
-var Version = "0.0.2.1"
+var Version = "0.0.2.2"
 
 var UUID = null
 
