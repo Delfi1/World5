@@ -67,7 +67,6 @@ func Profile():
 	
 	$Timer.queue_free()
 	self.add_child(ProfileWindow)
-	ProfileWindow.popup()
 
 
 func save_version():

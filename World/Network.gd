@@ -76,7 +76,10 @@ class Groups:
 
 
 class Friends:
-	pass
+	func load_list():
+		#Core.UUID
+		pass
+	
 
 
 class Server:

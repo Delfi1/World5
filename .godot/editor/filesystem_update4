@@ -7,3 +7,4 @@ res://Main/main.tscn
 res://Forum/Forum.tscn
 res://Main/ChangeProfile.gd
 res://World/Core.gd
+res://World/Network.gd
