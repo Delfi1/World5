@@ -126,7 +126,7 @@ func _on_update_completed(result, response_code, headers, body):
 	
 	DirAccess.remove_absolute(path)
 	
-	OS.alert("Update was installed!", "Updater")
+	OS.alert("Update was installed! Restarting...", "Updater")
 	OS.execute(OS.get_executable_path(), [])
 	get_tree().quit()
 
