@@ -104,8 +104,16 @@ offset_bottom = 496.0
 text = "Password:"
 alignment = 2
 
+[node name="Close" type="Button" parent="BackGround/ForeGround"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 8.0
+offset_right = 472.0
+offset_bottom = 32.0
+
 [node name="Get" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="BackGround/ForeGround/SaveButton" to="." method="_on_button_pressed"]
 [connection signal="request_completed" from="BackGround/ForeGround/Save" to="." method="_on_save_completed"]
+[connection signal="pressed" from="BackGround/ForeGround/Close" to="." method="_on_close_pressed"]
 [connection signal="request_completed" from="Get" to="." method="_on_request_completed"]

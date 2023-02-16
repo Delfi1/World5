@@ -115,3 +115,7 @@ func _process(delta):
 
 func Choosen(Check : CheckBox,Line : LineEdit):
 	Check.button_pressed = (len(Line.text) > 1)
+
+
+func _on_close_pressed():
+	self.queue_free()

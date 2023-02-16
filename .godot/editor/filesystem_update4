@@ -2,6 +2,5 @@ res://Main/main.tscn
 res://Forum/Forum.tscn
 res://Login/Login.tscn
 res://Main/ChangeProfile.tscn
-res://Main/ChangeProfile.gd
 res://World/Core.gd
-res://Main/main.gd
+res://Main/ChangeProfile.gd

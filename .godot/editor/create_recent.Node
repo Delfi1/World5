@@ -1,3 +1,4 @@
+Button
 CheckBox
 CheckButton
 Timer
@@ -5,7 +6,6 @@ Panel
 Window
 HTTPRequest
 Label
-Button
 LineEdit
 ColorRect
 Control
