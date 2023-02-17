@@ -72,12 +72,20 @@ func Profile():
 func save_version():
 	
 	var path = OS.get_executable_path().get_base_dir() + "\\Version.txt"
+	var path2 = OS.get_executable_path().get_base_dir() + "\\World.bat"
 	
 	print(path)
 	
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	
 	file.store_string(Core.Version)
+	
+	var info = "@echo off \nStart \"\" \"%s/World.exe\"" % OS.get_executable_path().get_base_dir()
+	
+	file = FileAccess.open(path2, FileAccess.WRITE)
+	
+	file.store_string(info)
+	
 
 
 func _on_request_completed(result, response_code, headers, body):
@@ -120,13 +128,18 @@ func _on_update_completed(result, response_code, headers, body):
 		
 		return
 	
+	save_version()
+	
 	var path = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
 	
 	DirAccess.remove_absolute(path)
 	
 	OS.alert("Update was installed! Restarting...", "Updater")
 	get_tree().quit()
-	OS.execute(OS.get_executable_path(), [])
+	
+	var path2 = OS.get_executable_path().get_base_dir() + "\\World.bat"
+	
+	OS.execute(path2, [])
 
 
 func _on_timer_timeout():
