@@ -2,6 +2,8 @@ extends Control
 
 
 func _on_info_pressed():
+	if $ProfileWindow != null:
+		return
 	var ChangeProfile = preload("res://Main/ProfileWindow.tscn").instantiate()
 	self.add_child(ChangeProfile)
 

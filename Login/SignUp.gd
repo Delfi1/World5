@@ -44,7 +44,8 @@ func _on_Login(result, response_code, headers, body):
 	
 	if response_code != 200:
 		clear()
-		OS.alert(str(response.error), "Error")
+		OS.alert("Can't connect to server! " + str(response), "Error")
+		printerr(result, headers)
 		$Foreground/SignUpButton.disabled = false
 		$Foreground/Return.disabled = false
 		return

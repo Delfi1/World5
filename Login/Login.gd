@@ -6,25 +6,7 @@ var Account = Network.Account.new()
 var Request = $HTTPRequest
 
 func _ready():
-	Data.load_data(Data.account_path)
-	if Data.current_data.is_empty():
-		print("restore..")
-		Data.reset_data()
-	
-	Data.load_data(Data.account_path)
-	$Foreground/Remember.button_pressed = Data.current_data["remember"]
-	
-	$Foreground/AutoLogin.button_pressed = Data.current_data["AutoLogin"]
-	
-	if $Foreground/Remember.button_pressed:
-		$Foreground/EmailText.text = Data.current_data["email"]
-		$Foreground/PasswordText.text = Data.current_data["password"]
-		if $Foreground/AutoLogin.button_pressed:
-			_on_login_button_pressed()
-	else:
-		Data.current_data["remember"] = false
-		Data.current_data["AutoLogin"] = false
-		Data.reset_data()
+	WriteData()
 
 func _on_login_button_pressed():
 	
@@ -44,6 +26,26 @@ func _on_login_button_pressed():
 	Account.login(Request, email, password)
 	
 
+func WriteData():
+	Data.load_data(Data.account_path)
+	if Data.current_data.is_empty():
+		print("restore..")
+		Data.reset_data()
+	
+	Data.load_data(Data.account_path)
+	$Foreground/Remember.button_pressed = Data.current_data["remember"]
+	
+	$Foreground/AutoLogin.button_pressed = Data.current_data["AutoLogin"]
+	
+	if $Foreground/Remember.button_pressed:
+		$Foreground/EmailText.text = Data.current_data["email"]
+		$Foreground/PasswordText.text = Data.current_data["password"]
+		if $Foreground/AutoLogin.button_pressed:
+			_on_login_button_pressed()
+	else:
+		Data.current_data["remember"] = false
+		Data.current_data["AutoLogin"] = false
+		Data.reset_data()
 
 func clear():
 	$Foreground/EmailText.text = ''
@@ -66,9 +68,10 @@ func _on_Login(result, response_code, headers, body):
 	if response_code != 200:
 		print(result, headers)
 		clear()
-		OS.alert(str(response.error), "Error")
+		OS.alert("Can't connect to server! " + str(response), "Error")
 		$Foreground/LoginButton.disabled = false
 		$Foreground/Return.disabled = false
+		WriteData()
 		return
 		
 	print(response)

@@ -28,7 +28,10 @@ func _input(event):
 func _ready():
 	
 	if Core.stats != null:
+		Info.add_theme_color_override("font_color", Color(1, 1, 1))
 		Info.text = "Username: '%s' \nEmail: '%s' \nCreatedAt: '%s' \nLastLoginAt: '%s' \nUUID: '%s'" % Core.stats
+	else:
+		Info.add_theme_color_override("font_color", Color(1, 0, 0))
 	
 	if not Account.IsConnected():
 		print("You are not connected!")
@@ -57,10 +60,13 @@ func _on_request_completed(result, response_code, headers, body):
 func change_info(user : Dictionary):
 	
 	if not user.has("displayName"):
-		OS.alert("Please enter username", "Alert")
-		Info.text = "Username: "
+		PasswordCheck.visible = false
+		$BackGround/ForeGround/PasswordText.visible = false
+		Info.text = "Please enter Username"
 		
 		return
+	else:
+		Info.add_theme_color_override("font_color", Color(1, 1, 1))
 	
 	var stats = [user["displayName"], user["email"], user["createdAt"], user["lastLoginAt"], Core.UUID]
 	
