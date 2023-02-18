@@ -3,8 +3,7 @@ res://Forum/Forum.tscn
 res://Login/Login.tscn
 res://Main/ChangeProfile.tscn
 res://Main/ProfileWindow.tscn
-res://Login/SignUp.gd
-res://Main/ChangeProfile.gd
+res://Forum/Friends/FriendsWindow.tscn
 res://Forum/Forum.gd
-res://World/Core.gd
+res://Forum/Friends/Friends.tscn
 res://Main/main.gd

@@ -77,7 +77,10 @@ class Groups:
 
 class Friends:
 	func load_list():
-		#Core.UUID
+		var headers = [
+			"Content-Type: application/json",
+			"Authorization: Bearer %s" % Core.idToken
+		]
 		pass
 	
 

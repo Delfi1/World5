@@ -35,3 +35,8 @@ func Firebase(url, Request : HTTPRequest, body, headers):
 	if error != OK:
 		printerr(error)
 
+func FirebaseData(url, Request : HTTPRequest, body, headers):
+	var error = Request.request(url, headers, HTTPClient.METHOD_POST, body)
+	
+	if error != OK:
+		printerr(error)
