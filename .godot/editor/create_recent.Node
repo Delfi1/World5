@@ -1,6 +1,8 @@
-Button
+Timer
+HTTPRequest
 Label
 ColorRect
+Button
 Control
 NinePatchRect
 TabBar
@@ -11,8 +13,6 @@ LineEdit
 Window
 CheckBox
 CheckButton
-Timer
 Panel
-HTTPRequest
 Camera2D
 Node2D

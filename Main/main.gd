@@ -1,16 +1,11 @@
 extends Control
 
-var ForumWindow = preload("res://Forum/ForumWindow.tscn").instantiate()
-
-var Forum = preload("res://Forum/Forum.tscn")
-
 @onready
 var Account = Network.Account.new()
 
 @onready
 var Server = Network.Server.new()
 
-var ProfileWindow = preload("res://Main/ProfileWindow.tscn").instantiate()
 
 func _ready():
 	get_viewport().set_embedding_subwindows(false)
@@ -24,49 +19,9 @@ func _ready():
 	
 	$LVersion.text = "Server Version: Loading...\nLauncher Version: " + str(Core.Version)
 	
-	$Game.disabled = true
 	print("\n\nUUID: %s" % Core.UUID)
 	
-	Profile()
-	
 	$Timer.start(10)
-
-func open_window(window : Window):
-	if window.visible:
-		add_child(window)
-		window.mode = Window.MODE_EXCLUSIVE_FULLSCREEN
-	
-	window.visible = true
-	print(window.mode)
-	window.mode = Window.MODE_EXCLUSIVE_FULLSCREEN
-
-func _on_game_pressed():
-	var GameWindow = preload("res://Game/GameWindow.tscn").instantiate()
-	open_window(GameWindow)
-	GameWindow.min_size = Vector2i(1280, 720)
-	GameWindow.max_size = Vector2i(get_viewport().size.x, get_viewport().size.y)
-	
-
-func _on_exit_pressed():
-	get_tree().quit()
-
-
-func _on_forum_pressed():
-	get_tree().change_scene_to_packed(Forum)
-	#open_window(ForumWindow)
-	#ForumWindow.min_size = Vector2i(800, 500)
-	#ForumWindow.max_size = Vector2i(get_viewport().size.x, get_viewport().size.y)
-
-
-func Profile():
-	if Core.Username == null:
-		Core.Username = ""
-	if len(Core.Username) > 4:
-		return
-	
-	
-	$Timer.queue_free()
-	self.add_child(ProfileWindow)
 
 
 func save_version():
@@ -86,7 +41,6 @@ func save_version():
 	
 	file.store_string(info)
 	
-
 
 func _on_request_completed(result, response_code, headers, body):
 	var response = body.get_string_from_utf8()
@@ -113,7 +67,6 @@ func _on_request_completed(result, response_code, headers, body):
 		Server.Update($UpdateRequest, path1, path2)
 		return
 	
-
 
 func _on_update_completed(result, response_code, headers, body):
 	if response_code != 200:

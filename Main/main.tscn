@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdvwc1qluy5u2"]
+[gd_scene load_steps=2 format=3 uid="uid://xqqab6t7d3ua"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_ptyl1"]
 
-[node name="Main" type="Control"]
+[node name="main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,64 +18,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.498039, 0.603922, 0.431373, 1)
-
-[node name="Game" type="Button" parent="."]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 184.0
-offset_bottom = 80.0
-theme_override_font_sizes/font_size = 24
-text = "Game"
-
-[node name="Forum" type="Button" parent="."]
-layout_mode = 0
-offset_left = 208.0
-offset_top = 24.0
-offset_right = 368.0
-offset_bottom = 80.0
-theme_override_font_sizes/font_size = 24
-text = "Forum"
-
-[node name="Exit" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -144.0
-offset_top = 24.0
-offset_right = -24.0
-offset_bottom = 80.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 24
-text = "Exit"
+color = Color(0.254902, 0.65098, 0.72549, 1)
 
 [node name="LVersion" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = -96.0
-offset_right = 440.0
-offset_bottom = -16.0
+offset_left = 24.0
+offset_top = -104.0
+offset_right = 560.0
+offset_bottom = -24.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 24
-text = "Server Version: Loading... 
-Launcher Version: "
+theme_override_font_sizes/font_size = 32
 vertical_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]
 
 [node name="CheckRequest" type="HTTPRequest" parent="."]
 
 [node name="UpdateRequest" type="HTTPRequest" parent="."]
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-
-[connection signal="pressed" from="Game" to="." method="_on_game_pressed"]
-[connection signal="pressed" from="Forum" to="." method="_on_forum_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="request_completed" from="CheckRequest" to="." method="_on_request_completed"]
 [connection signal="request_completed" from="UpdateRequest" to="." method="_on_update_completed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
