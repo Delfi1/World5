@@ -1,5 +1,2 @@
-res://Main/ChangeProfile.tscn
-res://Main/main.gd
-res://Main/main.tscn
 res://Login/Login.tscn
 res://World/Core.gd

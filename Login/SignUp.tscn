@@ -51,9 +51,9 @@ horizontal_alignment = 1
 [node name="EmailLabel" type="Label" parent="Foreground"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 100.0
+offset_top = 66.0
 offset_right = 320.0
-offset_bottom = 137.0
+offset_bottom = 103.0
 theme_override_font_sizes/font_size = 24
 text = "Account Email"
 horizontal_alignment = 1
@@ -61,24 +61,41 @@ horizontal_alignment = 1
 [node name="EmailText" type="LineEdit" parent="Foreground"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 156.0
+offset_top = 114.0
 offset_right = 320.0
-offset_bottom = 187.0
+offset_bottom = 145.0
+
+[node name="UsernameLabel" type="Label" parent="Foreground"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 170.0
+offset_right = 320.0
+offset_bottom = 207.0
+theme_override_font_sizes/font_size = 24
+text = "Username"
+horizontal_alignment = 1
+
+[node name="UsernameText" type="LineEdit" parent="Foreground"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 218.0
+offset_right = 320.0
+offset_bottom = 249.0
 
 [node name="PasswordText" type="LineEdit" parent="Foreground"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 300.0
+offset_top = 322.0
 offset_right = 320.0
-offset_bottom = 331.0
+offset_bottom = 353.0
 secret = true
 
 [node name="PasswordLabel" type="Label" parent="Foreground"]
 layout_mode = 1
 offset_left = 64.0
-offset_top = 244.0
+offset_top = 274.0
 offset_right = 320.0
-offset_bottom = 281.0
+offset_bottom = 311.0
 theme_override_font_sizes/font_size = 24
 text = "Account Password"
 horizontal_alignment = 1
@@ -118,6 +135,9 @@ flat = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[node name="Username" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="Foreground/SignUpButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="Foreground/Return" to="." method="_on_return_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_Login"]
+[connection signal="request_completed" from="Username" to="." method="_on_username_request_completed"]

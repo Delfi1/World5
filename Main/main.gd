@@ -17,7 +17,7 @@ func _ready():
 	
 	save_version()
 	
-	$LVersion.text = "Server Version: Loading...\nLauncher Version: " + str(Core.Version)
+	$LVersion.text = "Server Version: Loading...\nClient Version: " + str(Core.Version)
 	
 	print("\n\nUUID: %s" % Core.UUID)
 	
@@ -50,7 +50,7 @@ func _on_request_completed(result, response_code, headers, body):
 		return
 	
 	$LVersion.text = "Server Version: " + str(response)
-	$LVersion.text += "\nLauncher Version: " + str(Core.Version)
+	$LVersion.text += "\nClient Version: " + str(Core.Version)
 	
 	var ver = int(Core.Version[0]) * 1000 + int(Core.Version[2]) * 100 + int(Core.Version[4]) * 10 + int(Core.Version[6])
 	
