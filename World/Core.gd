@@ -1,6 +1,6 @@
 extends Node
 
-var Version = "0.0.2.7"
+var Version = "0.0.2.8"
 
 var UUID = null
 
@@ -24,9 +24,9 @@ var ChangeUrl = "https://identitytoolkit.googleapis.com/v1/accounts:update?key=%
 
 var GetData = "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=%s" % WebAPIKey
 
-var VerUrl = "https://raw.githubusercontent.com/Delfi1/World5/master/Export/version.txt"
+var VerUrl = "https://raw.githubusercontent.com/Delfi1/World6/master/Export/Version.txt"
 
-var PckUrl = "https://github.com/Delfi1/World5/blob/master/Export/World.pck?raw=true"
+var PckUrl = "https://github.com/Delfi1/World6/blob/master/Export/World.pck?raw=true"
 
 
 func Firebase(url, Request : HTTPRequest, body, headers):

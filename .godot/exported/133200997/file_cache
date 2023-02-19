@@ -2,6 +2,6 @@ res://assets/Resources/DF1.tres::bd02de29955133e790ac1b666b7d14d3::1675599748::r
 res://assets/Resources/FV1.tres::889d113da6caf561b6268c1b9cd4d969::1676138428::res://.godot/exported/133200997/export-84398d65ae150f96eae449ca469e4d76-FV1.res
 res://assets/Resources/Gradient.tres::a517bb7a2aeb78a6857c1a385ac16c0d::1674648224::res://.godot/exported/133200997/export-1f4212daf5daa8cb1cfbd92e003394d9-Gradient.res
 res://assets/Resources/WorldTheme.tres::6dacf34201fbda2147f95584dcabb8df::1674648224::res://.godot/exported/133200997/export-479177eb8072a2e433b4e3257dbcf249-WorldTheme.res
-res://Login/Login.tscn::edf9d469720a77b16e86378bd37f17c6::1676723561::res://.godot/exported/133200997/export-4668098d83f9758b356204e5d4face05-Login.scn
-res://Login/SignUp.tscn::15108312c9dd34c1fd51d8bd45b317a3::1676723362::res://.godot/exported/133200997/export-5da72effad4e708e17d056fcb5249042-SignUp.scn
-res://Main/main.tscn::492949f40d96b3898725d0e0883bc0f7::1676723362::res://.godot/exported/133200997/export-cdd813ab38d3bd8e260b860aae2a8731-main.scn
+res://Login/Login.tscn::edf9d469720a77b16e86378bd37f17c6::1676794752::res://.godot/exported/133200997/export-4668098d83f9758b356204e5d4face05-Login.scn
+res://Login/SignUp.tscn::15108312c9dd34c1fd51d8bd45b317a3::1676831151::res://.godot/exported/133200997/export-5da72effad4e708e17d056fcb5249042-SignUp.scn
+res://Main/main.tscn::938a84911656c3e982ffae6dcbdf8cea::1676831020::res://.godot/exported/133200997/export-cdd813ab38d3bd8e260b860aae2a8731-main.scn

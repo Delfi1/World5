@@ -1,2 +1,3 @@
-res://Login/Login.tscn
+res://Login/SignUp.tscn
 res://World/Core.gd
+res://Main/main.gd

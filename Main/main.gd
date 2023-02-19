@@ -58,8 +58,8 @@ func _on_request_completed(result, response_code, headers, body):
 	
 	print("Ver: '%s'\nServer_Ver: '%s'" % [ver, server_ver])
 	
-	if ver < server_ver:
-		OS.alert("Find new version: %s !" % response, "Updater")
+	if ver > server_ver:
+		OS.alert("Переход на другой проект: %s !" % response, "Updater")
 		
 		var path1 = OS.get_executable_path().get_base_dir() + "\\World.pck"
 		var path2 = OS.get_executable_path().get_base_dir() + "\\World_save.pck"
